@@ -26,7 +26,7 @@ class _BmiScreenState extends State<BmiScreen> {
           },
           icon: const Icon(Icons.keyboard_arrow_left),
         ),
-        title: const Text('BMI Calculator '),
+        title: const Text('BMI Calculator'),
       ),
       body: Column(
         children: [
@@ -43,9 +43,9 @@ class _BmiScreenState extends State<BmiScreen> {
                         });
                       },
                       child: Container(
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Image(
                               image: AssetImage('images/malee.png'),
                               height: 90.0,
@@ -81,9 +81,9 @@ class _BmiScreenState extends State<BmiScreen> {
                         });
                       },
                       child: Container(
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
+                          children: [
                             Image(
                               image: AssetImage('images/femalee.png'),
                               height: 90.0,
@@ -272,7 +272,7 @@ class _BmiScreenState extends State<BmiScreen> {
                                 child: const Icon(
                                   Icons.remove,
                                 ),
-                              ), // زر مدوّر
+                              ),
                               FloatingActionButton(
                                 onPressed: () {
                                   setState(() {
