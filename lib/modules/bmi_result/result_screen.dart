@@ -16,7 +16,10 @@ class BMIResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BMI Result'),
+        centerTitle: true,
+        title: const Text(
+          ' BMI Result ',
+        ),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -28,47 +31,27 @@ class BMIResultScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(18),
-                color: const Color.fromARGB(255, 204, 198, 198),
+            const SizedBox(
+              height: 32,
+            ),
+            Text(
+              '$result',
+              style: const TextStyle(
+                fontSize: 70.0,
+                fontWeight: FontWeight.bold,
               ),
-              child: const Text(
-                'Your Result \u{1F60A} : ',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-
-                ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: Text(
+                resultHandle(),
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
             ),
             const SizedBox(
-              height: 24,
-            ),
-            Text(
-              ' Gender : ${isMale ? 'Male' : 'Female'}',
-              style: const TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              ' Age : $age',
-              style: const TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              ' Result : $result',
-              style: const TextStyle(
-                fontSize: 25.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 24,
+              height: 16,
             ),
             Padding(
               padding: const EdgeInsets.all(32.0),
@@ -252,5 +235,18 @@ class BMIResultScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  String resultHandle() {
+    if (result >= 18.5 && result <= 24.9) {
+      return 'You have a normal BMI.';
+    }
+    if (result >= 25.0 && result <= 39.9) {
+      return 'You are overweight.\nTake care of your health.';
+    }
+    if (result >= 40.0) {
+      return 'You are obese.\nPlease consult a healthcare professional.';
+    }
+    return 'You are underweight.\nConsider gaining some weight for better health.';
   }
 }
