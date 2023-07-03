@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1687459390633,
@@ -16,6 +16,10 @@
                 {
                     "date": 1687459479685,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             Navigator.pop(context);\r\n           },\r\n           icon: const Icon(Icons.keyboard_arrow_left),\r\n         ),\r\n-        title: const Text('BMI Calculator '),\r\n+        title: const Text('BMI Calculator'),\r\n       ),\r\n       body: Column(\r\n         children: [\r\n           Expanded(\r\n@@ -42,11 +42,11 @@\n                           isMale = true;\r\n                         });\r\n                       },\r\n                       child: Container(\r\n-                        child: Column(\r\n+                        child: const Column(\r\n                           mainAxisAlignment: MainAxisAlignment.center,\r\n-                          children: const [\r\n+                          children: [\r\n                             Image(\r\n                               image: AssetImage('images/malee.png'),\r\n                               height: 90.0,\r\n                               width: 90.0,\r\n@@ -80,11 +80,11 @@\n                           isMale = false;\r\n                         });\r\n                       },\r\n                       child: Container(\r\n-                        child: Column(\r\n+                        child: const Column(\r\n                           mainAxisAlignment: MainAxisAlignment.center,\r\n-                          children: const [\r\n+                          children: [\r\n                             Image(\r\n                               image: AssetImage('images/femalee.png'),\r\n                               height: 90.0,\r\n                               width: 90.0,\r\n@@ -271,9 +271,9 @@\n                                 mini: true,\r\n                                 child: const Icon(\r\n                                   Icons.remove,\r\n                                 ),\r\n-                              ),  \r\n+                              ),\r\n                               FloatingActionButton(\r\n                                 onPressed: () {\r\n                                   setState(() {\r\n                                     weight++;\r\n"
+                },
+                {
+                    "date": 1688405969241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -301,10 +301,8 @@\n             height: 50.0,\r\n             child: MaterialButton(\r\n               onPressed: () {\r\n                 double result = weight / pow(height / 100, 2);\r\n-                // ignore: avoid_print\r\n-                print(result.round());\r\n                 Navigator.push(\r\n                   context,\r\n                   MaterialPageRoute(\r\n                     builder: (context) => BMIResultScreen(\r\n"
                 }
             ],
             "date": 1687459390633,

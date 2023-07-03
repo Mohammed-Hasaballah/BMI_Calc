@@ -2,15 +2,10 @@
 import 'package:flutter/material.dart';
 
 class BMIResultScreen extends StatelessWidget {
-  final bool isMale;
   final int result;
-  final int age;
-
   const BMIResultScreen({
     Key? key,
-    required this.isMale,
     required this.result,
-    required this.age,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {

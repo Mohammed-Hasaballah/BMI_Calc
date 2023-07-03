@@ -302,15 +302,11 @@ class _BmiScreenState extends State<BmiScreen> {
             child: MaterialButton(
               onPressed: () {
                 double result = weight / pow(height / 100, 2);
-                // ignore: avoid_print
-                print(result.round());
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => BMIResultScreen(
-                      age: age,
                       result: result.round(),
-                      isMale: isMale,
                     ),
                   ),
                 );
