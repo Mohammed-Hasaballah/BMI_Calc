@@ -24,206 +24,253 @@ class BMIResultScreen extends StatelessWidget {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             const SizedBox(
               height: 32,
             ),
-            Text(
-              '$result',
-              style: const TextStyle(
-                fontSize: 70.0,
-                fontWeight: FontWeight.bold,
-              ),
+            Column(
+              children: [
+                Text(
+                  '$result',
+                  style: const TextStyle(
+                    fontSize: 100.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Text(
+                    resultHandle(),
+                    style: const TextStyle(
+                        fontSize: 20, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(32.0),
+                  child: Table(
+                    border: TableBorder.all(),
+                    children: [
+                      TableRow(
+                        children: [
+                          TableCell(
+                            child: Container(
+                              color: const Color(0xff333244),
+                              child: const SizedBox(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    'BMI',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          TableCell(
+                            child: Container(
+                              color: const Color(0xff333244),
+                              child: const SizedBox(
+                                height: 50,
+                                child: Center(
+                                  child: Text(
+                                    'Status',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          TableCell(
+                            child: Container(
+                              color: const Color.fromARGB(255, 245, 225, 43),
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    '≤ 18.4',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          TableCell(
+                            child: Container(
+                              color: Colors.white,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    'Underweight',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          TableCell(
+                            child: Container(
+                              color: Colors.green,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    ' 18.5 - 24.9',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          TableCell(
+                            child: Container(
+                              color: Colors.white,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    'Normal',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          TableCell(
+                            child: Container(
+                              color: const Color.fromARGB(255, 246, 125, 33),
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    '25.0 - 39.9',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          TableCell(
+                            child: Container(
+                              color: Colors.white,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    'Overweight',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      TableRow(
+                        children: [
+                          TableCell(
+                            child: Container(
+                              color: Colors.red,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    '≥ 40.0',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          TableCell(
+                            child: Container(
+                              color: Colors.white,
+                              child: const SizedBox(
+                                height: 40,
+                                child: Center(
+                                  child: Text(
+                                    'Obese',
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w500,
+                                      color: Color(0xff333244),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Text(
-                resultHandle(),
-                style:
-                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Table(
-                border: TableBorder.all(),
-                children: [
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Container(
-                          color: const Color.fromARGB(255, 204, 198, 198),
-                          child: const SizedBox(
-                            height: 50,
-                            child: Center(
-                              child: Text(
-                                'BMI',
-                                style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        child: Container(
-                          color: const Color.fromARGB(255, 204, 198, 198),
-                          child: const SizedBox(
-                            height: 50,
-                            child: Center(
-                              child: Text(
-                                'Status',
-                                style: TextStyle(
-                                    fontSize: 24, fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+            Container(
+              color: const Color(0xffe83d67),
+              width: double.infinity,
+              height: 50.0,
+              child: MaterialButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text(
+                  'RE-CALCULATE',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 25.0,
                   ),
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Container(
-                          color: Colors.yellow,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                '≤ 18.4',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        child: Container(
-                          color: Colors.white,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                'Underweight',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Container(
-                          color: Colors.green,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                ' 18.5 - 24.9',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        child: Container(
-                          color: Colors.white,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                'Normal',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Container(
-                          color: const Color.fromARGB(255, 246, 125, 33),
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                '25.0 - 39.9',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        child: Container(
-                          color: Colors.white,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                'Overweight',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  TableRow(
-                    children: [
-                      TableCell(
-                        child: Container(
-                          color: Colors.red,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                '≥ 40.0',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      TableCell(
-                        child: Container(
-                          color: Colors.white,
-                          child: const SizedBox(
-                            height: 40,
-                            child: Center(
-                              child: Text(
-                                'Obese',
-                                style: TextStyle(
-                                    fontSize: 20, fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
             ),
           ],

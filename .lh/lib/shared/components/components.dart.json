@@ -1,0 +1,66 @@
+{
+    "sourceFile": "lib/shared/components/components.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1688584926623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688584932017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,10 @@\n-stl\n\\ No newline at end of file\n+import 'package:flutter/material.dart';\r\n+\r\n+class MyFab extends StatelessWidget {\r\n+  const MyFab({Key? key}) : super(key: key);\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return const Placeholder();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584937789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const MyFab({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Placeholder();\r\n+    return   Row();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584950794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const MyFab({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return   Row();\r\n+    return   RawMaterial();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584956950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const MyFab({Key? key}) : super(key: key);\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return   RawMaterial();\r\n+    return   RawMaterialButton(\r\n+      \r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584964631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return   RawMaterialButton(\r\n+      onPressed: (){},\r\n+      child: const Icon(Icons.add),\r\n       \r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584973455,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   Widget build(BuildContext context) {\r\n     return   RawMaterialButton(\r\n       onPressed: (){},\r\n       child: const Icon(Icons.add),\r\n-      \r\n+      shape: const CircleBorder(),\r\n+      fillColor: Colors.blue,\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584978846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,7 +9,9 @@\n       onPressed: (){},\r\n       child: const Icon(Icons.add),\r\n       shape: const CircleBorder(),\r\n       fillColor: Colors.blue,\r\n+      elevation: 0,\r\n+      \r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584986841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,8 @@\n       child: const Icon(Icons.add),\r\n       shape: const CircleBorder(),\r\n       fillColor: Colors.blue,\r\n       elevation: 0,\r\n-      \r\n+      padding: const EdgeInsets.all(15),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688584993861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,7 +11,8 @@\n       shape: const CircleBorder(),\r\n       fillColor: Colors.blue,\r\n       elevation: 0,\r\n       padding: const EdgeInsets.all(15),\r\n+      \r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688585023432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,6 @@\n-import 'package:flutter/material.dart';\r\n-\r\n-class MyFab extends StatelessWidget {\r\n-  const MyFab({Key? key}) : super(key: key);\r\n-\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return   RawMaterialButton(\r\n-      onPressed: (){},\r\n-      child: const Icon(Icons.add),\r\n-      shape: const CircleBorder(),\r\n-      fillColor: Colors.blue,\r\n-      elevation: 0,\r\n-      padding: const EdgeInsets.all(15),\r\n-      \r\n-    );\r\n-  }\r\n+import 'package:flutter/material.dart';class MyFab extends StatelessWidget {\r\n+  const MyFab({\r\n+    Key? key,    required this.onPressed,    required this.icon,  }) : super(key: key);  final Function() onPressed;  final IconData icon;  @override  Widget build(BuildContext context) {\r\n+    return RawMaterialButton(\r\n+      constraints: BoxConstraints(minWidth: 36, minHeight:36 ),      padding: EdgeInsets.all(16),      shape: CircleBorder(),      fillColor: Colors.pinkAccent,        onPressed: onPressed,      child: Icon(icon),    );  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688585053381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     return RawMaterialButton(\r\n       constraints: const BoxConstraints(minWidth: 36, minHeight: 36),\r\n       padding: const EdgeInsets.all(16),\r\n       shape: const CircleBorder(),\r\n-      fillColor: Color(s.pinkAccent),\r\n+      fillColor: Color(00),\r\n       onPressed: onPressed,\r\n       child: Icon(icon),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1688585069304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     return RawMaterialButton(\r\n       constraints: const BoxConstraints(minWidth: 36, minHeight: 36),\r\n       padding: const EdgeInsets.all(16),\r\n       shape: const CircleBorder(),\r\n-      fillColor: const Color(0x00e83d67),\r\n+      fillColor: const Color(0xffe83d67),\r\n       onPressed: onPressed,\r\n       child: Icon(icon),\r\n     );\r\n   }\r\n"
+                }
+            ],
+            "date": 1688584926623,
+            "name": "Commit-0",
+            "content": "stl"
+        }
+    ]
+}
