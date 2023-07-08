@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/modules/brain/bmi_brain.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1688838452752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1688838458659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,3 @@\n-class BMIBrain\n\\ No newline at end of file\n+class BMIBrain {\r\n+  \r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1688838643602,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   String resultHandle() {\r\n     if (result >= 18.5 && result <= 24.9) {\r\n       return 'You have a normal BMI.';\r\n     }\r\n-    if (result >= 25.0 && double.parse(result) <= 39.9) {\r\n+    if (result >= 25.0 && result <= 39.9) {\r\n       return 'You are overweight.\\nTake care of your health.';\r\n     }\r\n     if (double.parse(result) >= 40.0) {\r\n       return 'You are obese.\\nPlease consult a healthcare professional.';\r\n"
+                }
+            ],
+            "date": 1688838452752,
+            "name": "Commit-0",
+            "content": "class B"
+        }
+    ]
+}

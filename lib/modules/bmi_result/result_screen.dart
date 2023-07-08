@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 
 class BMIResultScreen extends StatelessWidget {
-  final int result;
+  final String result;
+  final String resultHandle;
   const BMIResultScreen({
     Key? key,
-    required this.result,
+    required this.result, required this.resultHandle,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class BMIResultScreen extends StatelessWidget {
             Column(
               children: [
                 Text(
-                  '$result',
+                  result,
                   style: const TextStyle(
                     fontSize: 100.0,
                     fontWeight: FontWeight.bold,
@@ -41,7 +42,7 @@ class BMIResultScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(32.0),
                   child: Text(
-                    resultHandle(),
+                    resultHandle,
                     style: const TextStyle(
                         fontSize: 20, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
@@ -279,16 +280,5 @@ class BMIResultScreen extends StatelessWidget {
     );
   }
 
-  String resultHandle() {
-    if (result >= 18.5 && result <= 24.9) {
-      return 'You have a normal BMI.';
-    }
-    if (result >= 25.0 && result <= 39.9) {
-      return 'You are overweight.\nTake care of your health.';
-    }
-    if (result >= 40.0) {
-      return 'You are obese.\nPlease consult a healthcare professional.';
-    }
-    return 'You are underweight.\nConsider gaining some weight for better health.';
-  }
+ 
 }

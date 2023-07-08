@@ -1,6 +1,5 @@
-import 'dart:math';
-
 import 'package:bmi/modules/bmi_result/result_screen.dart';
+import 'package:bmi/modules/brain/bmi_brain.dart';
 import 'package:flutter/material.dart';
 
 import '../../shared/components/components.dart';
@@ -290,12 +289,15 @@ class _BmiScreenState extends State<BmiScreen> {
             height: 50.0,
             child: MaterialButton(
               onPressed: () {
-                double result = weight / pow(height / 100, 2);
+                BMIBrain brain = BMIBrain(height: height, weight: weight);
+                double result = brain.resultCalc();
+                String resultHandlee = brain.resultHandle();
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => BMIResultScreen(
-                      result: result.round(),
+                      result: result.toStringAsFixed(1),
+                      resultHandle: resultHandlee,
                     ),
                   ),
                 );
