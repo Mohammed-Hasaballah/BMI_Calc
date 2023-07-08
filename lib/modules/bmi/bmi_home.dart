@@ -291,13 +291,15 @@ class _BmiScreenState extends State<BmiScreen> {
               onPressed: () {
                 BMIBrain brain = BMIBrain(height: height, weight: weight);
                 double result = brain.resultCalc();
-                String resultHandlee = brain.resultHandle();
+                String resultHandlee = brain.sentence;
+                Color colorHandlee = brain.color;
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) => BMIResultScreen(
                       result: result.toStringAsFixed(1),
                       resultHandle: resultHandlee,
+                      colorHandle: colorHandlee,
                     ),
                   ),
                 );

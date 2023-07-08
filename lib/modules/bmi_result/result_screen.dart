@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 class BMIResultScreen extends StatelessWidget {
   final String result;
   final String resultHandle;
+  final Color colorHandle;
   const BMIResultScreen({
     Key? key,
-    required this.result, required this.resultHandle,
+    required this.result,
+    required this.resultHandle,
+    required this.colorHandle,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -34,9 +37,10 @@ class BMIResultScreen extends StatelessWidget {
               children: [
                 Text(
                   result,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 100.0,
                     fontWeight: FontWeight.bold,
+                    color: colorHandle,
                   ),
                 ),
                 Padding(
@@ -279,6 +283,4 @@ class BMIResultScreen extends StatelessWidget {
       ),
     );
   }
-
- 
 }
